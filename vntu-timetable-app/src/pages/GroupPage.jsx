@@ -8,6 +8,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import TimetableData from "../components/TimetableData/TimetableData";
 import WeeksSelector from "../components/WeeksSelector/WeeksSelector";
 import DaysSelector from "../components/DaysSelector/DaysSelector";
+import FacultiesSelector from "../components/FacultiesSelector/FacultiesSelector";
+import GroupsSelector from "../components/GroupsSelector/GroupsSelector";
 
 dayjs.extend(localeData);
 dayjs.extend(weekOfYear);
@@ -68,26 +70,17 @@ function GroupPage() {
   return (
     <>
       <h3>Vntu Timetable Bot</h3>
-      <select onChange={handleFacultyChange}>
-        {faculties.length > 0 ? (
-          faculties.map((faculty) => {
-            return <option value={faculty.id}>{faculty.name}</option>;
-          })
-        ) : (
-          <option>lol</option>
-        )}
-      </select>
-      <select onChange={handleGroupChange}>
-        {faculties.length > 0 ? (
-          faculties
-            .find((faculty) => faculty.id === facultyId)
-            ["groups"].map((group) => {
-              return <option value={group.id}>{group.name}</option>;
-            })
-        ) : (
-          <option>lol</option>
-        )}
-      </select>
+      <FacultiesSelector
+        faculties={faculties}
+        facultyId={facultyId}
+        handleFacultyChange={handleFacultyChange}
+      />
+      <GroupsSelector
+        faculties={faculties}
+        facultyId={facultyId}
+        groupId={groupId}
+        handleGroupChange={handleGroupChange}
+      />
       <DaysSelector nextDay={nextDay} />
       <WeeksSelector week={week} changeWeek={changeWeek} />
       <p>{day}</p>
