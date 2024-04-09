@@ -2,7 +2,7 @@ import Button from "../Button/Button";
 
 function DaysSelector({ nextDay }) {
   return (
-    <div>
+    <div className="flex">
       <Button value={0} onClick={nextDay} text={"Пн"} />
       <Button value={1} onClick={nextDay} text={"Вт"} />
       <Button value={2} onClick={nextDay} text={"Ср"} />

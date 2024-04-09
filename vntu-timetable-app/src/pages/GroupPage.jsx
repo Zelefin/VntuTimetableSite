@@ -69,20 +69,24 @@ function GroupPage() {
   };
 
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-800">
       <Header />
-      <FacultiesSelector
-        faculties={faculties}
-        facultyId={facultyId}
-        handleFacultyChange={handleFacultyChange}
-      />
-      <GroupsSelector
-        faculties={faculties}
-        facultyId={facultyId}
-        groupId={groupId}
-        handleGroupChange={handleGroupChange}
-      />
-      <p className="text-white">
+      <div className="flex items-center justify-center">
+        <div>
+          <FacultiesSelector
+            faculties={faculties}
+            facultyId={facultyId}
+            handleFacultyChange={handleFacultyChange}
+          />
+          <GroupsSelector
+            faculties={faculties}
+            facultyId={facultyId}
+            groupId={groupId}
+            handleGroupChange={handleGroupChange}
+          />
+        </div>
+      </div>
+      <p className="text-white font-bold py-4 text-center">
         {"Сьогодні: " +
           dayjs()
             .format("dd D MMMM")
