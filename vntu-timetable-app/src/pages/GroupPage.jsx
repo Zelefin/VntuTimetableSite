@@ -51,12 +51,12 @@ function GroupPage() {
     setFaculties(data.data);
   };
 
-  const nextDay = () => {
-    setDay(day + 1 < 7 ? day + 1 : 0);
+  const nextDay = (e) => {
+    setDay(parseInt(e.target.value));
   };
 
-  const changeWeek = () => {
-    setWeek(week === "firstWeek" ? "secondWeek" : "firstWeek");
+  const changeWeek = (e) => {
+    setWeek(parseInt(e.target.value) === 1 ? "firstWeek" : "secondWeek");
   };
 
   const handleGroupChange = (e) => {
@@ -82,9 +82,11 @@ function GroupPage() {
         groupId={groupId}
         handleGroupChange={handleGroupChange}
       />
-      <DaysSelector nextDay={nextDay} />
       <WeeksSelector week={week} changeWeek={changeWeek} />
-      <p>{day}</p>
+      <DaysSelector nextDay={nextDay} />
+      <p>
+        {day} and {week}
+      </p>
       <p>
         {"Сьогодні: " +
           dayjs()
