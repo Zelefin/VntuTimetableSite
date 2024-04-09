@@ -5,6 +5,7 @@ import uk from "dayjs/locale/uk";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+import Header from "../components/Header/Header";
 import TimetableData from "../components/TimetableData/TimetableData";
 import WeeksSelector from "../components/WeeksSelector/WeeksSelector";
 import DaysSelector from "../components/DaysSelector/DaysSelector";
@@ -21,11 +22,11 @@ function weekToString(week) {
 
 function GroupPage() {
   const navigate = useNavigate();
-  const groupParams = useParams();
+  const linkParams = useParams();
   const [weeks, setWeeks] = useState([]);
   const [faculties, setFaculties] = useState([]);
-  const [facultyId, setFacultyId] = useState(210);
-  const [groupId, setGroupId] = useState(parseInt(groupParams.groupId));
+  const [facultyId, setFacultyId] = useState(parseInt(linkParams.facultyId));
+  const [groupId, setGroupId] = useState(parseInt(linkParams.groupId));
   const [week, setWeek] = useState("firstWeek");
   const [day, setDay] = useState(0);
 
@@ -59,7 +60,7 @@ function GroupPage() {
   };
 
   const handleGroupChange = (e) => {
-    navigate(`/group/${parseInt(e.target.value)}`);
+    navigate(`/${facultyId}/${parseInt(e.target.value)}`);
     setGroupId(parseInt(e.target.value));
   };
 
@@ -69,7 +70,7 @@ function GroupPage() {
 
   return (
     <>
-      <h3>Vntu Timetable Bot</h3>
+      <Header />
       <FacultiesSelector
         faculties={faculties}
         facultyId={facultyId}
