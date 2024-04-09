@@ -69,7 +69,7 @@ function GroupPage() {
   };
 
   return (
-    <>
+    <div className="bg-gray-900">
       <Header />
       <FacultiesSelector
         faculties={faculties}
@@ -82,12 +82,7 @@ function GroupPage() {
         groupId={groupId}
         handleGroupChange={handleGroupChange}
       />
-      <WeeksSelector week={week} changeWeek={changeWeek} />
-      <DaysSelector nextDay={nextDay} />
-      <p>
-        {day} and {week}
-      </p>
-      <p>
+      <p className="text-white">
         {"Сьогодні: " +
           dayjs()
             .format("dd D MMMM")
@@ -97,12 +92,17 @@ function GroupPage() {
           ", " +
           weekToString(dayjs().week())}
       </p>
+      <WeeksSelector changeWeek={changeWeek} />
+      <DaysSelector nextDay={nextDay} />
+      {/* <p>
+        {day} and {week}
+      </p> */}
       {Object.keys(weeks).length > 0 ? (
         <TimetableData lessons={weeks[week][day]["lessons"]} />
       ) : (
         <p>monkey</p>
       )}
-    </>
+    </div>
   );
 }
 
