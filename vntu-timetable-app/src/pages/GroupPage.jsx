@@ -69,7 +69,7 @@ function GroupPage() {
   };
 
   return (
-    <div className="bg-gray-800">
+    <div className="bg-gray-900 overflow-auto">
       <Header />
       <div className="flex items-center justify-center">
         <div>
@@ -86,7 +86,7 @@ function GroupPage() {
           />
         </div>
       </div>
-      <p className="text-white font-bold py-4 text-center">
+      <p className="text-white font-bold my-4 text-center">
         {"Сьогодні: " +
           dayjs()
             .format("dd D MMMM")

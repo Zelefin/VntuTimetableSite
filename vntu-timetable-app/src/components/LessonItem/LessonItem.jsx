@@ -1,6 +1,6 @@
 function LessonItem({ lesson }) {
   return (
-    <div className="text-white border-4 m-4 p-4 rounded-2xl">
+    <div className="text-white border-4 m-4 p-4 rounded-2xl bg-gray-800 border-gray-800">
       <div className="flex justify-between">
         <p className="bg-white px-3 py-1 rounded-3xl text-black">
           {lesson.num}
