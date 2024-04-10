@@ -96,8 +96,8 @@ function GroupPage() {
           ", " +
           weekToString(dayjs().week())}
       </p>
-      <WeeksSelector changeWeek={changeWeek} />
-      <DaysSelector nextDay={nextDay} />
+      <WeeksSelector changeWeek={changeWeek} week={week} />
+      <DaysSelector nextDay={nextDay} day={day} />
       {/* <p>
         {day} and {week}
       </p> */}

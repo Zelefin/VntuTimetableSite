@@ -1,15 +1,50 @@
 import Button from "../Button/Button";
 
-function DaysSelector({ nextDay }) {
+function DaysSelector({ nextDay, day }) {
   return (
     <div className="flex overflow-auto mx-4">
-      <Button value={0} onClick={nextDay} text={"Пн"} />
-      <Button value={1} onClick={nextDay} text={"Вт"} />
-      <Button value={2} onClick={nextDay} text={"Ср"} />
-      <Button value={3} onClick={nextDay} text={"Чт"} />
-      <Button value={4} onClick={nextDay} text={"Пт"} />
-      <Button value={5} onClick={nextDay} text={"Сб"} />
-      <Button value={6} onClick={nextDay} text={"Нд"} />
+      <Button
+        value={0}
+        onClick={nextDay}
+        text={"Пн"}
+        enabled={day === 0 ? true : false}
+      />
+      <Button
+        value={1}
+        onClick={nextDay}
+        text={"Вт"}
+        enabled={day === 1 ? true : false}
+      />
+      <Button
+        value={2}
+        onClick={nextDay}
+        text={"Ср"}
+        enabled={day === 2 ? true : false}
+      />
+      <Button
+        value={3}
+        onClick={nextDay}
+        text={"Чт"}
+        enabled={day === 3 ? true : false}
+      />
+      <Button
+        value={4}
+        onClick={nextDay}
+        text={"Пт"}
+        enabled={day === 4 ? true : false}
+      />
+      <Button
+        value={5}
+        onClick={nextDay}
+        text={"Сб"}
+        enabled={day === 5 ? true : false}
+      />
+      <Button
+        value={6}
+        onClick={nextDay}
+        text={"Нд"}
+        enabled={day === 6 ? true : false}
+      />
     </div>
   );
 }
