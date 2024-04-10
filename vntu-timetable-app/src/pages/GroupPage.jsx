@@ -22,6 +22,7 @@ function weekToString(week) {
 }
 
 function GroupPage() {
+  const baseUrl = "https://included-champion-gannet.ngrok-free.app:8000";
   const navigate = useNavigate();
   const linkParams = useParams();
   const [weeks, setWeeks] = useState([]);
@@ -41,13 +42,13 @@ function GroupPage() {
   }, [groupId]);
 
   const fetchWeeks = async () => {
-    const response = await fetch(`http://127.0.0.1:8000/v0/groups/${groupId}`);
+    const response = await fetch(`${baseUrl}/v0/groups/${groupId}`);
     const data = await response.json();
     setWeeks(data.data);
   };
 
   const fetchFaculties = async () => {
-    const response = await fetch("http://127.0.0.1:8000/v0/faculties");
+    const response = await fetch(baseUrl + "/v0/faculties");
     const data = await response.json();
     setFaculties(data.data);
   };
