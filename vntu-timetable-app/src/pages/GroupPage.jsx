@@ -4,6 +4,7 @@ import weekOfYear from "dayjs/plugin/weekOfYear";
 import uk from "dayjs/locale/uk";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Messaging } from "react-cssfx-loading";
 
 import Header from "../components/Header/Header";
 import TimetableData from "../components/TimetableData/TimetableData";
@@ -104,7 +105,9 @@ function GroupPage() {
       {Object.keys(weeks).length > 0 ? (
         <TimetableData lessons={weeks[week][day]["lessons"]} />
       ) : (
-        <p className="text-white">monkey</p>
+        <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <Messaging width={"13px"} height={"13px"} />
+        </div>
       )}
     </div>
   );

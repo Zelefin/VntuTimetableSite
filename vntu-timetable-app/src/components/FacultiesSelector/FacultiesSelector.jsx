@@ -13,7 +13,7 @@ function FacultiesSelector({ faculties, facultyId, handleFacultyChange }) {
               return <option value={faculty.id}>{faculty.name}</option>;
             })
           ) : (
-            <option>lol</option>
+            <></>
           )}
         </select>
       </label>

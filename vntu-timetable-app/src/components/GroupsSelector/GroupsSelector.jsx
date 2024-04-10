@@ -15,7 +15,7 @@ function GroupsSelector({ faculties, facultyId, groupId, handleGroupChange }) {
                 return <option value={group.id}>{group.name}</option>;
               })
           ) : (
-            <option>lol</option>
+            <></>
           )}
         </select>
       </label>
