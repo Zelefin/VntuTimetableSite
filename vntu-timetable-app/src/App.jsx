@@ -4,7 +4,7 @@ import RootPage from "./pages/RootPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/VntuTimetableSite">
       <Routes>
         <Route path="/" exec element={<RootPage />} />
         <Route path="/:facultyId/:groupId" element={<GroupPage />} />
