@@ -1,4 +1,8 @@
-import LessonItem from "../LessonItem/LessonItem";
+import {
+  HiMiniUserCircle,
+  HiAcademicCap,
+  HiMiniBuildingOffice,
+} from "react-icons/hi2";
 
 function LessonItemExtended({ lessons }) {
   return (
@@ -14,18 +18,39 @@ function LessonItemExtended({ lessons }) {
       <p className="bg-blue-500 text-white font-bold py-2 px-4 rounded m-2">
         {lessons[0].type}
       </p>
-      <p>{lessons[0].name}</p>
-      <p>{lessons[0].teacher.name}</p>
-      <p>{lessons[0].auditory}</p>
-      <p>{lessons[0].subgroup ? lessons[0].subgroup + " пг." : null}</p>
-
+      <div className="flex items-center">
+        <HiAcademicCap />
+        <p className="font-semibold ml-1">{lessons[0].name}</p>
+      </div>
+      <div className="flex items-center">
+        <HiMiniUserCircle />
+        <p className="ml-1">{lessons[0].teacher.name}</p>
+      </div>
+      <div className="flex items-center">
+        <HiMiniBuildingOffice />
+        <p className="font-semibold ml-1">{lessons[0].auditory}</p>
+      </div>
+      <p className="italic">
+        {lessons[0].subgroup ? lessons[0].subgroup + " пг." : null}
+      </p>
       <p className="bg-blue-500 text-white font-bold py-2 px-4 rounded m-2">
         {lessons[1].type}
       </p>
-      <p>{lessons[1].name}</p>
-      <p>{lessons[1].teacher.name}</p>
-      <p>{lessons[1].auditory}</p>
-      <p>{lessons[1].subgroup ? lessons[1].subgroup + " пг." : null}</p>
+      <div className="flex items-center">
+        <HiAcademicCap />
+        <p className="font-semibold ml-1">{lessons[1].name}</p>
+      </div>
+      <div className="flex items-center">
+        <HiMiniUserCircle />
+        <p className="ml-1">{lessons[1].teacher.name}</p>
+      </div>
+      <div className="flex items-center">
+        <HiMiniBuildingOffice />
+        <p className="font-semibold ml-1">{lessons[1].auditory}</p>
+      </div>
+      <p className="italic">
+        {lessons[1].subgroup ? lessons[1].subgroup + " пг." : null}
+      </p>
 
       {/* {lessons.map((lesson) => (
         <LessonItem lesson={lesson} />

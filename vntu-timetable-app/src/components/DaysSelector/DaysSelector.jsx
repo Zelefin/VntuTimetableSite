@@ -2,7 +2,7 @@ import Button from "../Button/Button";
 
 function DaysSelector({ nextDay }) {
   return (
-    <div className="flex overflow-auto">
+    <div className="flex overflow-auto mx-4">
       <Button value={0} onClick={nextDay} text={"Пн"} />
       <Button value={1} onClick={nextDay} text={"Вт"} />
       <Button value={2} onClick={nextDay} text={"Ср"} />

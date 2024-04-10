@@ -1,3 +1,9 @@
+import {
+  HiMiniUserCircle,
+  HiAcademicCap,
+  HiMiniBuildingOffice,
+} from "react-icons/hi2";
+
 function LessonItem({ lesson }) {
   return (
     <div className="text-white border-4 m-4 p-4 rounded-2xl bg-gray-800 border-gray-800">
@@ -12,10 +18,21 @@ function LessonItem({ lesson }) {
       <p className="bg-blue-500 text-white font-bold py-2 px-4 rounded m-2">
         {lesson.type}
       </p>
-      <p>{lesson.name}</p>
-      <p>{lesson.teacher.name}</p>
-      <p>{lesson.auditory}</p>
-      <p>{lesson.subgroup ? lesson.subgroup + " пг." : null}</p>
+      <div className="flex items-center">
+        <HiAcademicCap />
+        <p className="font-semibold ml-1">{lesson.name}</p>
+      </div>
+      <div className="flex items-center">
+        <HiMiniUserCircle />
+        <p className="ml-1">{lesson.teacher.name}</p>
+      </div>
+      <div className="flex items-center">
+        <HiMiniBuildingOffice />
+        <p className="font-semibold ml-1">{lesson.auditory}</p>
+      </div>
+      <p className="italic">
+        {lesson.subgroup ? lesson.subgroup + " пг." : null}
+      </p>
     </div>
   );
 }

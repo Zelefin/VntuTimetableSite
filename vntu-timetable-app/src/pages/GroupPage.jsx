@@ -104,7 +104,7 @@ function GroupPage() {
       {Object.keys(weeks).length > 0 ? (
         <TimetableData lessons={weeks[week][day]["lessons"]} />
       ) : (
-        <p>monkey</p>
+        <p className="text-white">monkey</p>
       )}
     </div>
   );
