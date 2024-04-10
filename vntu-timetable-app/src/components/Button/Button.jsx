@@ -3,7 +3,7 @@ function Button({ value, onClick, text }) {
     <button
       value={value}
       onClick={onClick}
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full m-2 block"
+      className="bg-blue-500 hover:bg-opacity-0 border-blue-500 border-2 text-white font-bold py-0.5 px-1.5 rounded w-full m-1 block"
     >
       {text}
     </button>
