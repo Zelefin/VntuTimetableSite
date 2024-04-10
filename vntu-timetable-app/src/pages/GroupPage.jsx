@@ -22,7 +22,7 @@ function weekToString(week) {
 }
 
 function GroupPage() {
-  const baseUrl = "https://included-champion-gannet.ngrok-free.app:8000";
+  const baseUrl = "https://included-champion-gannet.ngrok-free.app";
   const navigate = useNavigate();
   const linkParams = useParams();
   const [weeks, setWeeks] = useState([]);
