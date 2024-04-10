@@ -18,7 +18,13 @@ function TimetableData({ lessons }) {
       }
     }
 
-    return components;
+    return components.length > 0 ? (
+      components
+    ) : (
+      <p className="text-white font-bold text-2xl text-center m-10">
+        Уроків немає 🏖️
+      </p>
+    );
   };
 
   return <div>{generateComponents(lessons)}</div>;
