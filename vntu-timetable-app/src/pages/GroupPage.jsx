@@ -42,13 +42,23 @@ function GroupPage() {
   }, [groupId]);
 
   const fetchWeeks = async () => {
-    const response = await fetch(`${baseUrl}/v0/groups/${groupId}`);
+    const response = await fetch(`${baseUrl}/v0/groups/${groupId}`, {
+      method: "get",
+      headers: new Headers({
+        "ngrok-skip-browser-warning": "69420",
+      }),
+    });
     const data = await response.json();
     setWeeks(data.data);
   };
 
   const fetchFaculties = async () => {
-    const response = await fetch(baseUrl + "/v0/faculties");
+    const response = await fetch(baseUrl + "/v0/faculties", {
+      method: "get",
+      headers: new Headers({
+        "ngrok-skip-browser-warning": "69420",
+      }),
+    });
     const data = await response.json();
     setFaculties(data.data);
   };
