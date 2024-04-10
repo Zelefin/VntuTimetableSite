@@ -70,7 +70,7 @@ function GroupPage() {
   };
 
   return (
-    <div className="bg-gray-900 overflow-auto">
+    <div className="bg-gray-900 overflow-auto h-full">
       <Header />
       <div className="flex items-center justify-center">
         <div>
