@@ -25,12 +25,14 @@ function GroupPage() {
   const baseUrl = "https://included-champion-gannet.ngrok-free.app";
   const navigate = useNavigate();
   const linkParams = useParams();
-  const [weeks, setWeeks] = useState([]);
+  const [weeks, setWeeks] = useState({});
   const [faculties, setFaculties] = useState([]);
   const [facultyId, setFacultyId] = useState(parseInt(linkParams.facultyId));
   const [groupId, setGroupId] = useState(parseInt(linkParams.groupId));
-  const [week, setWeek] = useState("firstWeek");
-  const [day, setDay] = useState(0);
+  const [week, setWeek] = useState(
+    weekToString(dayjs().week()) === 1 ? "firstWeek" : "secondWeek"
+  );
+  const [day, setDay] = useState(dayjs().day());
 
   useEffect(() => {
     fetchWeeks();
