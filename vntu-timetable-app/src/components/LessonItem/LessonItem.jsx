@@ -15,7 +15,7 @@ function LessonItem({ lesson }) {
           {lesson.begin}-{lesson.end}
         </p>
       </div>
-      <p className="bg-blue-500 text-white font-bold py-2 px-4 rounded m-2">
+      <p className="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-2 mb-2">
         {lesson.type}
       </p>
       <div className="flex items-center">

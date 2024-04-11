@@ -22,7 +22,7 @@ function LessonItemExtended({ lessons }) {
           {lessons[0].begin}-{lessons[0].end}
         </p>
       </div>
-      <p className="bg-blue-500 text-white font-bold py-2 px-4 rounded m-2">
+      <p className="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-2 mb-2">
         {lessons[0].type}
       </p>
       <div className="flex items-center">
@@ -40,7 +40,7 @@ function LessonItemExtended({ lessons }) {
       <p className="italic">
         {lessons[0].subgroup ? lessons[0].subgroup + " пг." : null}
       </p>
-      <p className="bg-blue-500 text-white font-bold py-2 px-4 rounded m-2">
+      <p className="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-2 mb-2">
         {lessons[1].type}
       </p>
       <div className="flex items-center">
