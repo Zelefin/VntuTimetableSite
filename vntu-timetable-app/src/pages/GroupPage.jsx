@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import localeData from "dayjs/plugin/localeData";
 import weekOfYear from "dayjs/plugin/weekOfYear";
+import weekday from "dayjs/plugin/weekday";
 import uk from "dayjs/locale/uk";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
@@ -15,6 +16,7 @@ import GroupsSelector from "../components/GroupsSelector/GroupsSelector";
 
 dayjs.extend(localeData);
 dayjs.extend(weekOfYear);
+dayjs.extend(weekday);
 dayjs.locale(uk);
 
 function weekToString(week) {
@@ -30,9 +32,11 @@ function GroupPage() {
   const [facultyId, setFacultyId] = useState(parseInt(linkParams.facultyId));
   const [groupId, setGroupId] = useState(parseInt(linkParams.groupId));
   const [week, setWeek] = useState(
-    weekToString(dayjs().week()) === 1 ? "firstWeek" : "secondWeek"
+    weekToString(dayjs().week()) === "Перший тиждень"
+      ? "firstWeek"
+      : "secondWeek"
   );
-  const [day, setDay] = useState(dayjs().day());
+  const [day, setDay] = useState(dayjs().weekday());
 
   useEffect(() => {
     fetchWeeks();
