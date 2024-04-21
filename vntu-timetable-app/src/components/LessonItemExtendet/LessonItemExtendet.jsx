@@ -1,9 +1,8 @@
-import {
-  HiMiniUserCircle,
-  HiAcademicCap,
-  HiMiniBuildingOffice,
-} from "react-icons/hi2";
 import { useState } from "react";
+
+import LessonHeader from "../LessonHeader/LessonHeader";
+import LessonType from "../LessonType/LessonType";
+import LessonDescription from "../LessonDescription/LessonDescription";
 
 function LessonItemExtended({ lessons }) {
   const [extended, setExtended] = useState(false);
@@ -14,47 +13,28 @@ function LessonItemExtended({ lessons }) {
 
   return (
     <div className="text-white m-4 p-4 border-4 rounded-2xl bg-gray-800 border-gray-800">
-      <div className="flex justify-between">
-        <p className="bg-white px-3 py-1 rounded-3xl text-black">
-          {lessons[0].num}
-        </p>
-        <p>
-          {lessons[0].begin}-{lessons[0].end}
-        </p>
-      </div>
-      <p className="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-2 mb-2">
-        {lessons[0].type}
-      </p>
-      <div className="flex items-center">
-        <HiAcademicCap />
-        <p className="font-semibold ml-1">{lessons[0].name}</p>
-      </div>
-      <div className={extended ? "flex items-center" : "hidden"}>
-        <HiMiniUserCircle />
-        <p className="ml-1">{lessons[0].teacher.name}</p>
-      </div>
-      <div className="flex items-center">
-        <HiMiniBuildingOffice />
-        <p className="font-semibold ml-1">{lessons[0].auditory}</p>
-      </div>
+      <LessonHeader
+        lessonNum={lessons[0].num}
+        lessonBegin={lessons[0].begin}
+        lessonEnd={lessons[0].end}
+      />
+      <LessonType lessonType={lessons[0].type} />
+      <LessonDescription
+        lessonName={lessons[0].name}
+        lessonTeacherName={lessons[0].teacher.name}
+        lessonAuditory={lessons[0].auditory}
+        extended={extended}
+      />
       <p className="italic">
         {lessons[0].subgroup ? lessons[0].subgroup + " пг." : null}
       </p>
-      <p className="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-2 mb-2">
-        {lessons[1].type}
-      </p>
-      <div className="flex items-center">
-        <HiAcademicCap />
-        <p className="font-semibold ml-1">{lessons[1].name}</p>
-      </div>
-      <div className={extended ? "flex items-center" : "hidden"}>
-        <HiMiniUserCircle />
-        <p className="ml-1">{lessons[1].teacher.name}</p>
-      </div>
-      <div className="flex items-center">
-        <HiMiniBuildingOffice />
-        <p className="font-semibold ml-1">{lessons[1].auditory}</p>
-      </div>
+      <LessonType lessonType={lessons[1].type} />
+      <LessonDescription
+        lessonName={lessons[1].name}
+        lessonTeacherName={lessons[1].teacher.name}
+        lessonAuditory={lessons[1].auditory}
+        extended={extended}
+      />
       <p className="italic">
         {lessons[1].subgroup ? lessons[1].subgroup + " пг." : null}
       </p>
