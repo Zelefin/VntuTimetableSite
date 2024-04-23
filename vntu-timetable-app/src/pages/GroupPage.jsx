@@ -4,7 +4,7 @@ import weekOfYear from "dayjs/plugin/weekOfYear";
 import weekday from "dayjs/plugin/weekday";
 import uk from "dayjs/locale/uk";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { Messaging } from "react-cssfx-loading";
 
 import Header from "../components/Header/Header";
@@ -28,6 +28,7 @@ function GroupPage() {
   const tg = window.Telegram.WebApp;
   const navigate = useNavigate();
   const linkParams = useParams();
+  const [searchParams] = useSearchParams();
   const [weeks, setWeeks] = useState({});
   const [faculties, setFaculties] = useState([]);
   const [facultyId, setFacultyId] = useState(parseInt(linkParams.facultyId));
@@ -42,6 +43,11 @@ function GroupPage() {
   useEffect(() => {
     tg.expand();
     tg.headerColor = "#111827";
+    if (searchParams.get("tgWebAppStartParam")) {
+      const tgparams = searchParams.get("tgWebAppStartParam").split("_");
+      setFacultyId(parseInt(tgparams[0]));
+      setGroupId(parseInt(tgparams[1]));
+    }
     fetchWeeks();
     fetchFaculties();
   }, []);
@@ -92,7 +98,7 @@ function GroupPage() {
 
   return (
     <div className="bg-gray-900 overflow-auto h-full">
-      <Header />
+      {/* <Header /> */}
       <div className="flex items-center justify-center">
         <div>
           <FacultiesSelector
