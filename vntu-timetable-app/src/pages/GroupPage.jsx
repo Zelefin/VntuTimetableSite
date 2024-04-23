@@ -4,10 +4,9 @@ import weekOfYear from "dayjs/plugin/weekOfYear";
 import weekday from "dayjs/plugin/weekday";
 import uk from "dayjs/locale/uk";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate, useSearchParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Messaging } from "react-cssfx-loading";
 
-import Header from "../components/Header/Header";
 import TimetableData from "../components/TimetableData/TimetableData";
 import WeeksSelector from "../components/WeeksSelector/WeeksSelector";
 import DaysSelector from "../components/DaysSelector/DaysSelector";
@@ -28,7 +27,6 @@ function GroupPage() {
   const tg = window.Telegram.WebApp;
   const navigate = useNavigate();
   const linkParams = useParams();
-  const [searchParams] = useSearchParams();
   const [weeks, setWeeks] = useState({});
   const [faculties, setFaculties] = useState([]);
   const [facultyId, setFacultyId] = useState(parseInt(linkParams.facultyId));
@@ -43,11 +41,6 @@ function GroupPage() {
   useEffect(() => {
     tg.expand();
     tg.headerColor = "#111827";
-    if (searchParams.get("tgWebAppStartParam")) {
-      const tgparams = searchParams.get("tgWebAppStartParam").split("_");
-      setFacultyId(parseInt(tgparams[0]));
-      setGroupId(parseInt(tgparams[1]));
-    }
     fetchWeeks();
     fetchFaculties();
   }, []);
