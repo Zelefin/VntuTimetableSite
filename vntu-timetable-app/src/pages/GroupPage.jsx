@@ -25,6 +25,7 @@ function weekToString(week) {
 
 function GroupPage() {
   const baseUrl = "https://vm4625529.25ssd.had.wf";
+  const tg = window.Telegram.WebApp;
   const navigate = useNavigate();
   const linkParams = useParams();
   const [weeks, setWeeks] = useState({});
@@ -39,11 +40,14 @@ function GroupPage() {
   const [day, setDay] = useState(dayjs().weekday());
 
   useEffect(() => {
+    tg.expand();
+    tg.headerColor = "#111827";
     fetchWeeks();
     fetchFaculties();
   }, []);
 
   useEffect(() => {
+    tg.expand();
     fetchWeeks();
   }, [groupId]);
 
@@ -116,9 +120,6 @@ function GroupPage() {
       </p>
       <WeeksSelector changeWeek={changeWeek} week={week} />
       <DaysSelector nextDay={nextDay} day={day} />
-      {/* <p>
-        {day} and {week}
-      </p> */}
       {Object.keys(weeks).length > 0 ? (
         <TimetableData lessons={weeks[week][day]["lessons"]} />
       ) : (
