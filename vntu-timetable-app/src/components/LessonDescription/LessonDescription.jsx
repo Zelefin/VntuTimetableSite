@@ -13,15 +13,21 @@ function LessonDescription({
   return (
     <>
       <div className="flex items-center">
-        <HiAcademicCap />
+        <div className="h-4 w-4">
+          <HiAcademicCap />
+        </div>
         <p className="font-semibold ml-1">{lessonName}</p>
       </div>
       <div className={extended ? "flex items-center" : "hidden"}>
-        <HiMiniUserCircle />
+        <div className="h-4 w-4">
+          <HiMiniUserCircle />
+        </div>
         <p className="ml-1">{lessonTeacherName}</p>
       </div>
       <div className="flex items-center">
-        <HiMiniBuildingOffice />
+        <div className="h-4 w-4">
+          <HiMiniBuildingOffice />
+        </div>
         <p className="font-semibold ml-1">{lessonAuditory}</p>
       </div>
     </>
