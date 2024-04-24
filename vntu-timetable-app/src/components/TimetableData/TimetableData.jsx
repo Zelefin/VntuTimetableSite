@@ -21,7 +21,7 @@ function TimetableData({ lessons }) {
     return components.length > 0 ? (
       components
     ) : (
-      <p className="text-white font-bold text-2xl text-center m-10">
+      <p className="text-white font-bold text-2xl text-center m-10 mt-36">
         Уроків немає 🏖️
       </p>
     );
