@@ -25,6 +25,9 @@ function weekToString(week) {
 function GroupPage() {
   const baseUrl = "https://vm4625529.25ssd.had.wf";
   const tg = window.Telegram.WebApp;
+  tg.enableClosingConfirmation();
+  tg.setHeaderColor("#111827");
+  tg.setBackgroundColor("#111827");
   const navigate = useNavigate();
   const linkParams = useParams();
   const [weeks, setWeeks] = useState({});
@@ -40,10 +43,13 @@ function GroupPage() {
 
   useEffect(() => {
     tg.expand();
-    tg.headerColor = "#111827";
     fetchWeeks();
     fetchFaculties();
   }, []);
+
+  useEffect(() => {
+    tg.expand();
+  }, [day]);
 
   useEffect(() => {
     tg.expand();
@@ -90,8 +96,7 @@ function GroupPage() {
   };
 
   return (
-    <div className="bg-gray-900 overflow-auto h-full">
-      {/* <Header /> */}
+    <div>
       <div className="flex items-center justify-center">
         <div>
           <FacultiesSelector
