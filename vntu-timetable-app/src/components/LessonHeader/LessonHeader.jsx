@@ -4,7 +4,7 @@ function LessonHeader({ lessonNum, lessonBegin, lessonEnd }) {
       <p className="bg-white px-3 py-1 min-w-8 rounded-3xl text-black">
         {lessonNum}
       </p>
-      <p>
+      <p className="py-1 min-w-8">
         {lessonBegin}-{lessonEnd}
       </p>
     </div>
