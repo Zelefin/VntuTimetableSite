@@ -25,7 +25,6 @@ function weekToString(week) {
 function GroupPage() {
   const baseUrl = "https://vm4625529.25ssd.had.wf";
   const tg = window.Telegram.WebApp;
-  tg.enableClosingConfirmation();
   tg.setHeaderColor("#111827");
   tg.setBackgroundColor("#111827");
   const navigate = useNavigate();
