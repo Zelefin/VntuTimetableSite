@@ -87,6 +87,7 @@ function GroupPage() {
 
   const handleGroupChange = (e) => {
     navigate(`/${facultyId}/${parseInt(e.target.value)}`);
+    setWeeks({});
     setGroupId(parseInt(e.target.value));
   };
 
