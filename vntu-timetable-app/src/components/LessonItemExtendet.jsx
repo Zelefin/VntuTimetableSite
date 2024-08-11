@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import LessonHeader from "../LessonHeader/LessonHeader";
-import LessonType from "../LessonType/LessonType";
-import LessonDescription from "../LessonDescription/LessonDescription";
+import LessonHeader from "./LessonHeader";
+import LessonType from "./LessonType";
+import LessonDescription from "./LessonDescription";
 
 function LessonItemExtended({ lessons }) {
   const [extended, setExtended] = useState(false);

@@ -1,5 +1,5 @@
-import LessonItem from "../LessonItem/LessonItem";
-import LessonItemExtended from "../LessonItemExtendet/LessonItemExtendet";
+import LessonItem from "./LessonItem";
+import LessonItemExtended from "./LessonItemExtendet";
 
 function TimetableData({ lessons }) {
   const generateComponents = (lessons) => {
