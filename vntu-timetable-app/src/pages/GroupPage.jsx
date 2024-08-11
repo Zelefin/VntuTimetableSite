@@ -23,7 +23,7 @@ function weekToString(week) {
 }
 
 function GroupPage() {
-  const baseUrl = "https://vm4625529.25ssd.had.wf";
+  const baseUrl = "https://vntu-timetable.zelefin.top";
   const tg = window.Telegram.WebApp;
   tg.setHeaderColor("#111827");
   tg.setBackgroundColor("#111827");
