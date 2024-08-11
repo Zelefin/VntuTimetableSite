@@ -7,11 +7,11 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Messaging } from "react-cssfx-loading";
 
-import TimetableData from "../components/TimetableData/TimetableData";
-import WeeksSelector from "../components/WeeksSelector/WeeksSelector";
-import DaysSelector from "../components/DaysSelector/DaysSelector";
-import FacultiesSelector from "../components/FacultiesSelector/FacultiesSelector";
-import GroupsSelector from "../components/GroupsSelector/GroupsSelector";
+import TimetableData from "../components/TimetableData";
+import WeeksSelector from "../components/WeeksSelector";
+import DaysSelector from "../components/DaysSelector";
+import FacultiesSelector from "../components/FacultiesSelector";
+import GroupsSelector from "../components/GroupsSelector";
 
 dayjs.extend(localeData);
 dayjs.extend(weekOfYear);
