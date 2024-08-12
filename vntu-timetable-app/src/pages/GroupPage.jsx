@@ -19,7 +19,7 @@ dayjs.extend(weekday);
 dayjs.locale(uk);
 
 function weekToString(week) {
-  return week % 2 === 0 ? "Перший тиждень" : "Другий тиждень";
+  return week % 2 !== 0 ? "Перший тиждень" : "Другий тиждень";
 }
 
 function GroupPage() {
